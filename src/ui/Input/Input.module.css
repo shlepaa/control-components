@@ -1,0 +1,28 @@
+.input {
+	min-width: 274px;
+	border: 2px solid var(--main);
+	transition: border-color var(--duration);
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+.input:hover {
+	border-color: var(--hover);
+}
+
+.input:focus {
+	border-color: var(--hover);
+}
+
+.input:active {
+	border-color: var(--hover);
+}
+
+.input::placeholder {
+	transition: color var(--duration);
+	color: var(--gray);
+}
+
+.input:hover::placeholder {
+	color: var(--gray-hover);
+}

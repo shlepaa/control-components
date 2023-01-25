@@ -1,0 +1,65 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	font-family: 'Proxima Nova', Roboto, system-ui, Tahoma, sans-serif;
+	list-style: none;
+	outline: none;
+}
+
+html {
+	text-size-adjust: 100%;
+}
+
+body {
+	color: black;
+	font-weight: 400;
+	background-color: white;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+button {
+	color: black;
+}
+
+button {
+	background-color: unset;
+	border: unset;
+}
+
+h1 {
+	font-size: 48px;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+
+:root {
+	--main: rgb(196, 114, 108);
+	--hover: rgb(123, 123, 212);
+	--gray: rgb(97, 93, 93);
+	--gray-hover: rgb(77, 69, 69);
+	--duration: 0.5s;
+}
