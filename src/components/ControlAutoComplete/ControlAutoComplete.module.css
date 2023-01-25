@@ -1,0 +1,47 @@
+.controlAutoComplete {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.countries {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.countries > * {
+	margin-top: 15px;
+}
+
+.country {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	cursor: pointer;
+	position: relative;
+}
+
+.country:after {
+	content: '';
+	width: 250px;
+	height: 2px;
+	margin-top: 5px;
+	background-color: var(--main);
+	transition: background-color var(--duration);
+}
+
+.country:hover.country:after {
+	background-color: var(--hover);
+}
+
+.country > * + * {
+	margin-top: 5px;
+}
+
+.img {
+	background-color: var(--main);
+	width: 45px;
+	height: 45px;
+	border-radius: 10px;
+}

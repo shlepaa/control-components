@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import styles from './styles/App.module.css';
-import { ControlButtons } from './components';
+import { ControlAutoComplete, ControlButtons } from './components';
 import { buttonsForControl1 } from './data/buttonsForControl1';
 import { buttonsForControl2 } from './data/buttonsForControl2';
 
@@ -17,19 +17,31 @@ export const App: FC = () => {
 		setValue1(string);
 	};
 
+	const [value3, setValue3] = useState<string>('');
+
+	const handleSetValue3 = (string: string) => {
+		setValue3(string);
+	};
+
 	return (
 		<div className={styles.app}>
 			<ControlButtons
-				placeholder="2 кнопки справа"
+				placeholder="2 buttons right"
 				setValue={handleSetValue}
 				value={value}
 				buttons={buttonsForControl1}
 			/>
 			<ControlButtons
-				placeholder="1 кнопка слева и справа"
+				placeholder="1 button right and left"
 				setValue={handleSetValue1}
 				value={value1}
 				buttons={buttonsForControl2}
+			/>
+			<ControlAutoComplete
+				maxHint={3}
+				value={value3}
+				setValue={handleSetValue3}
+				placeholder="Throw me some countries..."
 			/>
 		</div>
 	);
