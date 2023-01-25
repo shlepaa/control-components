@@ -23,12 +23,12 @@ export const App: FC = observer(() => {
 				<ControlAutoComplete
 					maxHint={3}
 					controlInput={new ControlInput()}
-					placeholder="Throw me some countries..."
+					placeholder="max 3"
 				/>
 				<ControlAutoComplete
 					maxHint={10}
 					controlInput={new ControlInput()}
-					placeholder="Throw me some countries..."
+					placeholder="max 10"
 				/>
 			</div>
 		</div>

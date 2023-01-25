@@ -1,20 +1,14 @@
 import { observer } from 'mobx-react-lite';
-import { FC, useEffect, useState } from 'react';
-import { getCountryByName } from '../../api/apiService';
-import { ICountryInfo } from '../../interfaces/ICountryInfo';
+import { FC, useEffect } from 'react';
 import { Input } from '../../ui';
 import styles from './ControlAutoComplete.module.css';
 import { ControlAutoCompleteProps } from './ControlAutoComplete.props';
 
 export const ControlAutoComplete: FC<ControlAutoCompleteProps> = observer(
 	({ placeholder, maxHint, controlInput, className, ...props }) => {
-		const [countries, setCountries] = useState<ICountryInfo[]>([]);
-
 		useEffect(() => {
-			getCountryByName(controlInput.value).then((data) =>
-				setCountries(data.slice(0, maxHint))
-			);
-		}, [maxHint, controlInput.value]);
+			controlInput.fetchCountries(controlInput.value);
+		}, [controlInput.value]);
 
 		return (
 			<div
@@ -30,21 +24,25 @@ export const ControlAutoComplete: FC<ControlAutoCompleteProps> = observer(
 				/>
 
 				<div className={styles.countries}>
-					{countries.map((country) => (
-						<div
-							onClick={() => controlInput.setValue(country.name)}
-							key={country.name}
-							className={styles.country}
-						>
-							<span>{country.name}</span>
-							<span>{country.fullName}</span>
-							<img
-								className={styles.img}
-								src={country.flag}
-								alt={country.name}
-							/>
-						</div>
-					))}
+					{controlInput.state === 'pending'
+						? 'Loading...'
+						: controlInput.countries.map((country) => (
+								<div
+									onClick={() =>
+										controlInput.setValue(country.name)
+									}
+									key={country.name}
+									className={styles.country}
+								>
+									<span>{country.name}</span>
+									<span>{country.fullName}</span>
+									<img
+										className={styles.img}
+										src={country.flag}
+										alt={country.name}
+									/>
+								</div>
+						  ))}
 				</div>
 			</div>
 		);
