@@ -6,7 +6,7 @@ export const App: FC = () => {
 	return (
 		<div className={styles.app}>
 			<Input />
-			<Button />
+			<Button>123</Button>
 		</div>
 	);
 };

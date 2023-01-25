@@ -15,10 +15,6 @@
 	border-color: var(--hover);
 }
 
-.button:focus {
-	border-color: var(--hover);
-}
-
 .button:active {
 	border-color: var(--hover);
 	transform: scale(0.99);
