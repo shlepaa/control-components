@@ -2,6 +2,6 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface ButtonProps
 	extends DetailedHTMLProps<
-		HTMLAttributes<HTMLInputElement>,
-		HTMLInputElement
+		HTMLAttributes<HTMLButtonElement>,
+		HTMLButtonElement
 	> {}

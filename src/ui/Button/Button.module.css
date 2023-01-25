@@ -1,28 +1,35 @@
-.input {
-	min-width: 274px;
+.button {
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	background-color: var(--main);
 	border: 2px solid var(--main);
-	transition: border-color var(--duration);
-	border-radius: 10px;
-	padding: 5px 10px;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: background-color var(--duration) ease-in-out,
+		border-color var(--duration) ease-in-out;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 35%);
 }
 
-.input:hover {
+.button:hover {
 	border-color: var(--hover);
 }
 
-.input:focus {
+.button:focus {
 	border-color: var(--hover);
 }
 
-.input:active {
+.button:active {
 	border-color: var(--hover);
+	transform: scale(0.99);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 35%);
 }
 
-.input::placeholder {
+.button::placeholder {
 	transition: color var(--duration);
 	color: var(--gray);
 }
 
-.input:hover::placeholder {
+.button:hover::placeholder {
 	color: var(--gray-hover);
 }

@@ -4,6 +4,7 @@
 	transition: border-color var(--duration);
 	border-radius: 10px;
 	padding: 5px 10px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 35%);
 }
 
 .input:hover {

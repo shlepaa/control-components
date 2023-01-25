@@ -13,9 +13,9 @@ html {
 }
 
 body {
-	color: black;
+	color: var(--text-main);
 	font-weight: 400;
-	background-color: white;
+	background-color: var(--white);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	height: 100vh;
@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 button {
-	color: black;
+	color: var(--text-main);
 }
 
 button {
@@ -62,4 +62,6 @@ a {
 	--gray: rgb(97, 93, 93);
 	--gray-hover: rgb(77, 69, 69);
 	--duration: 0.5s;
+	--text-main: black;
+	--white: white;
 }

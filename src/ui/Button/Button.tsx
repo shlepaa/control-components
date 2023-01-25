@@ -6,7 +6,7 @@ export const Button: FC<ButtonProps> = ({ className, ...props }) => {
 	const [value, setValue] = useState<string>('');
 
 	return (
-		<input
+		<button
 			className={`${styles.button} ${className}`}
 			onChange={(e) => setValue(e.currentTarget.value)}
 			value={value}
