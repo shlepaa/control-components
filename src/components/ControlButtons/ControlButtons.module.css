@@ -1,0 +1,34 @@
+.controlButtons {
+	display: flex;
+	align-items: flex-start;
+}
+
+.block {
+	display: flex;
+	flex-direction: column;
+}
+
+.block > button + button {
+	margin-top: 10px;
+}
+
+.buttonLeft {
+	order: 1;
+}
+
+.buttonRight {
+	order: 3;
+	margin-left: 10px;
+}
+
+.input {
+	order: 2;
+	margin-left: 10px;
+}
+
+.button {
+	display: table;
+}
+.button {
+	display: table;
+}
