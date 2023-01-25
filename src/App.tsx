@@ -1,48 +1,36 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import styles from './styles/App.module.css';
 import { ControlAutoComplete, ControlButtons } from './components';
 import { buttonsForControl1 } from './data/buttonsForControl1';
 import { buttonsForControl2 } from './data/buttonsForControl2';
+import { observer } from 'mobx-react-lite';
+import { ControlInput } from './store/ControlInput';
 
-export const App: FC = () => {
-	const [value, setValue] = useState<string>('');
-
-	const handleSetValue = (string: string) => {
-		setValue(string);
-	};
-
-	const [value1, setValue1] = useState<string>('');
-
-	const handleSetValue1 = (string: string) => {
-		setValue1(string);
-	};
-
-	const [value3, setValue3] = useState<string>('');
-
-	const handleSetValue3 = (string: string) => {
-		setValue3(string);
-	};
-
+export const App: FC = observer(() => {
 	return (
 		<div className={styles.app}>
 			<ControlButtons
 				placeholder="2 buttons right"
-				setValue={handleSetValue}
-				value={value}
+				controlInput={new ControlInput()}
 				buttons={buttonsForControl1}
 			/>
 			<ControlButtons
 				placeholder="1 button right and left"
-				setValue={handleSetValue1}
-				value={value1}
+				controlInput={new ControlInput()}
 				buttons={buttonsForControl2}
 			/>
-			<ControlAutoComplete
-				maxHint={3}
-				value={value3}
-				setValue={handleSetValue3}
-				placeholder="Throw me some countries..."
-			/>
+			<div className={styles.block}>
+				<ControlAutoComplete
+					maxHint={3}
+					controlInput={new ControlInput()}
+					placeholder="Throw me some countries..."
+				/>
+				<ControlAutoComplete
+					maxHint={10}
+					controlInput={new ControlInput()}
+					placeholder="Throw me some countries..."
+				/>
+			</div>
 		</div>
 	);
-};
+});

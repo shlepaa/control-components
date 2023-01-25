@@ -1,10 +1,9 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { TypeSetValue } from '../../interfaces/TypeSetValue';
+import { ControlInput } from '../../store/ControlInput';
 
 export interface ControlAutoCompleteProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	value: string;
-	setValue: TypeSetValue;
 	placeholder: string;
 	maxHint: number;
+	controlInput: ControlInput;
 }

@@ -8,7 +8,7 @@ export const buttonsForControl2: IButton[] = [
 		text: 'Alert value',
 	},
 	{
-		callback: (value, setValue) => {
+		callback: (value) => {
 			if (Number(value)) {
 				alert(value);
 			}

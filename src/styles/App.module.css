@@ -7,3 +7,11 @@
 .app > * + * {
 	margin-top: 45px;
 }
+
+.block {
+	display: flex;
+}
+
+.block > * + * {
+	margin-left: 15px;
+}

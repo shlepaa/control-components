@@ -14,7 +14,8 @@
 		"resolveJsonModule": true,
 		"strictPropertyInitialization": false,
 		"noUncheckedIndexedAccess": true,
-		"noImplicitReturns": true
+		"noImplicitReturns": true,
+		"useDefineForClassFields": true
 	},
 	"include": ["src/**/*"]
 }
