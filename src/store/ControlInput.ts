@@ -17,14 +17,14 @@ export class ControlInput {
 		this.value = string;
 	}
 
-	async fetchCountries(value: string) {
+	async fetchCountries(value: string, maxHint: number) {
 		this.countries = [];
 		this.state = 'pending';
 
 		try {
 			const fetchCountries = await getCountryByName(value);
 			runInAction(() => {
-				this.countries = fetchCountries;
+				this.countries = fetchCountries.slice(0, maxHint);
 				this.state = 'done';
 			});
 		} catch {

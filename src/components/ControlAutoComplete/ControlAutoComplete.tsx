@@ -7,7 +7,7 @@ import { ControlAutoCompleteProps } from './ControlAutoComplete.props';
 export const ControlAutoComplete: FC<ControlAutoCompleteProps> = observer(
 	({ placeholder, maxHint, controlInput, className, ...props }) => {
 		useEffect(() => {
-			controlInput.fetchCountries(controlInput.value);
+			controlInput.fetchCountries(controlInput.value, maxHint);
 		}, [controlInput.value]);
 
 		return (
